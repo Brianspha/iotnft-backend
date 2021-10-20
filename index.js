@@ -41,7 +41,7 @@ app.get("/", (req, res, next) => {
 });
 
 async function start() {
-  await app.start(3000, "0.0.0.0");
+  await app.start(process.env.PORT || 3000, "0.0.0.0");
   console.log(
     "======================Server Started on PORT 3000======================"
   );
