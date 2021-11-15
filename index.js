@@ -21,7 +21,7 @@ app.post("/", (req, res, next) => {
     data: {
       query: `
           {
-            deviceRecords(where: { imei:"${req.body.imei}"}) {
+            deviceRecords(orderBy: timestamp, orderDirection:desc, first: 100,where: { imei:"${req.body.imei}"})  {
               raw # !! Protobuf encoded sensors values
               imei
               signature,timestamp
